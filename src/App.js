@@ -1,8 +1,7 @@
 
 import { Provider, connect } from 'react-redux';
-import {store} from './config/store'
+import { store } from './config/store'
 import CounterActions from './actions/counter'
-
 import './App.css';
 
 
@@ -14,7 +13,7 @@ const CounterComponent = ({ counter, incrementarContador, decrementarContador })
   </header>
 )
 
-const mapStateToProps = ({counter}) => ({
+const mapStateToProps = ({ counter }) => ({
   counter
 })
 
@@ -27,9 +26,11 @@ const ConnecedCounterComponent = connect(mapStateToProps, mapDispatchToProps())(
 function App() {
   return (
     <Provider store={store} >
-    <div className="App">
-      <ConnecedCounterComponent/>
-    </div>
+      <div className="App">
+        <h1>Clase Redux</h1>
+        <hr />
+        <ConnecedCounterComponent />
+      </div>
     </Provider>
   );
 }
